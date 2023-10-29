@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Sditing Software</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+
+    <!-- Update these with your own fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <div id="clickable-div" style="text-align: center; cursor: pointer; background-color: lightblue; padding: 20px;">
+        <a href="index.html" style="text-decoration: none; color: black;">
+            Click here to return to homepage
+        </a>
+    </div>
+
+</head>
+
+<body>
+    <!-- <header>
+        <div class="logo">
+            <img src="" alt="">
+        </div>
+        <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+        </nav>
+    </header> -->
+
+
+    <section class="intro">
+        <h1 class="section__title section__title--intro">
+            <strong>Photo  Editing Software</strong>
+        </h1>
+        <p class="section__subtitle section__subtitle--intro"></p>
+        <img src="photo_editing.jpg" alt="" class="intro__img">
+    </section>
+
+    <div class="portfolio-item-individual">
+        <p>This project is a Python-based image manipulation application designed to provide a user-friendly interface for processing and enhancing digital images. Built on the Stanford Portable Library (SPL), this application offers a range of image transformation
+            functions, from basic operations such as flipping and rotating images to more advanced features like applying grayscale, green screen effects, and equalization. The user interacts with the program through a graphical user interface, with buttons
+            to trigger specific image processing functions. </p>
+        <img src="imageshop.png" alt="Layout">
+        <p> The user interface of the program is basic, with all avaliable functions appearing on the left</p>
+        <b> Vertical Flipping</b>
+        <img src="flipped_image.png" alt="Layout">
+        <p>The flip_vertical function is designed to flip an image vertically. It takes an input image as a parameter, processes it, and returns a new image that is the result of flipping the input image along its vertical axis. Here's a breakdown of how
+            the flip_vertical function works:</p>
+        <b> Input Parameter: image: </b>
+        <p> This parameter represents the original image that you want to flip vertically.</p> <b> Image Pixel Array:</b>
+        <p> The function first accesses the pixel data of the input image using the get_pixel_array() method. This method returns a 2D array that represents the image's pixels.</p><b> Vertical Flipping:</b>
+        <p> The function performs the vertical flip by reversing the order of rows in the pixel array. This means that the top row of pixels becomes the bottom row, the second-top row becomes the second-bottom row, and so on. Creating a New Image: After flipping
+            the pixel data, the function creates a new image using the modified pixel array.</p> <b> Output:</b>
+        <p> The function returns the newly created image, which is a vertically flipped version of the original input image.
+        </p>
+        <b> Rotating</b>
+        <img src="rotated_ image.png" alt="Layout">
+        <p> The function first accesses the pixel data of the input image using the get_pixel_array() method. This method returns a 2D array that represents the image's pixels. Creating a New Array: The function creates a new 2D array, which will hold the
+            rotated pixel data. The dimensions of this new array are swapped compared to the original one to accommodate the rotation. This means the number of rows in the new array will be equal to the number of columns in the original array, and the
+            number of columns will be equal to the number of rows in the original array.</p><b> Rotation Process:</b>
+        <p> The function then iterates through the original pixel array, row by row and pixel by pixel. For each pixel in the original array, it places that pixel in the corresponding location in the new array, but rotated by 90 degrees clockwise. To achieve
+            the rotation, it changes the row index of the original pixel to the column index in the new array, and it changes the column index of the original pixel to the reverse of the row index in the new array. This swapping and reversing of row and
+            column indices effectively rotate the image clockwise.</p>
+
+        <b> Gray Scale</b>
+        <p> The grayscale function, or rather the set of functions that work together to achieve grayscale conversion, is designed to transform a color image into a grayscale image. Grayscale conversion is a common image processing operation that eliminates
+            color information, leaving only shades of gray based on the brightness of the original colors. Here's how the grayscale conversion process works in this application:</p>
+        <img src="grayscale.png" alt="">
+        <b> Calculate Luminance (luminance) Function:</b>
+
+        <p> To convert a color pixel into a grayscale pixel, the function calculates the luminance of the color pixel. Luminance is a measure of the brightness of a color and is often used to convert color images to grayscale. The luminance value for a color
+            pixel is calculated using the formula:</p>
+        <p>luminance = 0.299 * R + 0.587 * G + 0.114 * B
+        </p>
+        Grayscale Pixel Creation:
+
+        <P>The luminance value calculated in the previous step is used to create a grayscale pixel. In grayscale, all color channels (R, G, and B) are set to the same value, which is the calculated luminance value.</P>
+        <B> Replace Color Pixels:</B>
+        <P> The grayscale pixel replaces the original color pixel in the 2D pixel array.</P>
+        <B> New Grayscale Image:</B>
+        <P> After processing all pixels in the array, a new 2D pixel array has been created, with each color pixel replaced by a grayscale pixel.</P>
+        <B> Create a New Image:</B>
+        <P> Using the modified pixel array, a new image is created representing the grayscale version of the original input image.</P>
+
+        <b> Greenscreen/chromakey</b>
+        <img src="green_screen.png" alt="">
+        <p>The greenscreen function is designed to implement a green screen effect, also known as chroma keying, where a specific color (typically green or blue) is replaced with another image or background. This function takes two input images: the primary
+            image (foreground) and a green screen image (background). It processes these images and returns a new image in which the green screen color from the primary image is replaced with the corresponding parts of the background image. Here's how
+            the greenscreen function works:</p>
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- replace with your own email address -->
+        <a href="mailto:saulifshin.cs@gmail.com" class="footer__link">saulifshin.cs@gmail.com</a>
+        <p> 510-570-0221</p>
+
+    </footer>
+
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
